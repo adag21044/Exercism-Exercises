@@ -109,10 +109,8 @@ class BirdCount
     private int[] birdsPerDay;
 
     // Static method to return last week's bird counts
-    public static int[] LastWeek()
-    {
-        return new int[] { 0, 2, 5, 3, 7, 8, 4 };
-    }
+    public static int[] LastWeek() => new int[] { 0, 2, 5, 3, 7, 8, 4 };
+    
 
     // Constructor to initialize the instance variable
     public BirdCount(int[] birdsPerDay)
@@ -121,10 +119,8 @@ class BirdCount
     }
 
     // Returns the number of birds counted today
-    public int Today()
-    {
-        return birdsPerDay[birdsPerDay.Length - 1];
-    }
+    public int Today() => birdsPerDay[birdsPerDay.Length - 1];
+    
 
     // Increments the bird count for today by 1
     public void IncrementTodaysCount()
@@ -169,3 +165,4 @@ class BirdCount
         return busyDays;
     }
 }
+
