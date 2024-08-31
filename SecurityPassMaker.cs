@@ -53,30 +53,30 @@ public class SecurityPassMaker
 {
     public string GetDisplayName(TeamSupport support)
     {
-        
+        // Handle Manager and Chairman cases
         if (support is Manager || support is Chairman)
         {
             return "Too Important for a Security Pass";
         }
         
-        
+        // Handle Security team cases
         if (support is Security security)
         {
-            
+            // Exclude SecurityJunior, SecurityIntern, and PoliceLiaison from "Priority Personnel"
             if (security is SecurityJunior || security is SecurityIntern || security is PoliceLiaison)
             {
                 return security.Title;
             }
-            return security.Title + " Priority Personnel";
+            return $"{security.Title} Priority Personnel";
         }
         
-        
+        // Handle other Staff cases
         if (support is Staff staff)
         {
             return staff.Title;
         }
 
-        
+        // Default case (just in case, though it should not happen based on the provided hierarchy)
         return "Unknown Title";
     }
 }
